@@ -9,7 +9,7 @@ nyc <- read_csv("Downloads/nycrevenue.csv")
 options(scipen = 999)
 names(nyc) <- tolower(names(nyc))
 
-#Only look at 2023 data for forecasting
+#Filter dataset to only include revenue amount and fiscal year.
 nycrev <- nyc %>%
   filter(revenue_or_spending == 'Revenue') %>%
   select(amount, fiscal_year)
